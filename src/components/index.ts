@@ -1,3 +1,4 @@
-import TabBarIcon from './tabBarIcon';
+import TabBarIcon from './TabBarIcon';
+import ListItem from './ListItem';
 
-export { TabBarIcon };
+export { TabBarIcon, ListItem };

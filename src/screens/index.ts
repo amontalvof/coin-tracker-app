@@ -1,6 +1,6 @@
-import Expenses from './expenses';
-import Reports from './reports';
-import Add from './add';
-import Settings from './settings';
+import Expenses from './Expenses';
+import Reports from './Reports';
+import Add from './Add';
+import Settings from './Settings';
 
 export { Expenses, Reports, Add, Settings };

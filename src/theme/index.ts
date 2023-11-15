@@ -1,11 +1,12 @@
 import type { Theme } from '@react-navigation/native';
 
-const colors = {
+export const colors = {
     blue: '#0A84FF',
     black: '#0d0d0d',
     darkGray: '#1a1a1a',
     lightGray: '#808080',
     white: '#FFFFFF',
+    red: '#FF0000',
 };
 
 export const theme: Theme = {
