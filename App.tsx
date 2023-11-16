@@ -31,10 +31,10 @@ export default function App() {
                     },
                 }}
             >
-                <Tab.Screen name="Settings" component={Settings} />
                 <Tab.Screen name="Expenses" component={Expenses} />
                 <Tab.Screen name="Reports" component={Reports} />
                 <Tab.Screen name="Add" component={Add} />
+                <Tab.Screen name="Settings" component={Settings} />
             </Tab.Navigator>
         </NavigationContainer>
     );

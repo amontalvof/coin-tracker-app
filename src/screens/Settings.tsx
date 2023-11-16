@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { colors } from '../theme';
 import { ListItem } from '../components';
@@ -16,7 +16,7 @@ const Settings = ({ navigation }) => {
     return (
         <View
             style={{
-                margin: 16,
+                margin: 20,
                 borderRadius: 11,
                 overflow: 'hidden',
             }}
@@ -32,10 +32,10 @@ const Settings = ({ navigation }) => {
                     />
                 }
                 onClick={() => {
-                    navigation.navigate('Categories');
+                    // navigation.navigate('Categories');
                 }}
             />
-            {/* <ListItem
+            <ListItem
                 isDestructive
                 label="Erase all data"
                 onClick={() => {
@@ -52,9 +52,9 @@ const Settings = ({ navigation }) => {
                                 text: 'Erase data',
                                 style: 'destructive',
                                 onPress: () => {
-                                    realm.write(() => {
-                                        realm.deleteAll();
-                                    });
+                                    // realm.write(() => {
+                                    //     realm.deleteAll();
+                                    // });
                                 },
                             },
                         ],
@@ -63,7 +63,7 @@ const Settings = ({ navigation }) => {
                         }
                     );
                 }}
-            /> */}
+            />
         </View>
     );
 };

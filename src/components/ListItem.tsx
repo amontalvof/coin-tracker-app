@@ -5,9 +5,9 @@ import { colors, theme } from '../theme';
 
 type ListItemProps = {
     label: string;
-    detail: React.ReactNode;
+    detail?: React.ReactNode;
     onClick?: () => void;
-    swipeToDelete: boolean;
+    swipeToDelete?: boolean;
     onDelete?: () => void;
     isDestructive?: boolean;
 };
@@ -28,7 +28,6 @@ const ListItem = (props: ListItemProps) => {
                     minHeight: 44,
                     paddingHorizontal: 12,
                     borderBottomWidth: 1,
-                    borderBottomColor: theme.colors.border,
                     backgroundColor: theme.colors.card,
                 }}
                 onPress={onClick}
