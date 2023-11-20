@@ -1,41 +1,29 @@
-import { Platform } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { Add, Expenses, Reports, Settings } from './src/screens';
 import { theme } from './src/theme';
-import { TabBarIcon } from './src/components';
+import BottomTabNavigator from './src/components/BottomTabNavigator';
+import Categories from './src/screens/Categories';
+import RootStackParamList from './src/types/rootStackParamList';
 
-const Tab = createBottomTabNavigator();
-
-const barStyleOptions =
-    Platform.OS === 'android'
-        ? { height: 60, paddingBottom: 10 }
-        : { height: 90, paddingBottom: 40 };
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
     return (
         <NavigationContainer theme={theme}>
             <StatusBar style="light" />
-            <Tab.Navigator
-                screenOptions={{
-                    tabBarIcon: TabBarIcon,
-                    tabBarActiveTintColor: theme.colors.primary,
-                    tabBarInactiveTintColor: theme.colors.border,
-                    tabBarStyle: {
-                        backgroundColor: theme.colors.card,
-                        borderTopWidth: 0,
-                        elevation: 0,
-                        paddingTop: 10,
-                        ...barStyleOptions,
-                    },
-                }}
-            >
-                <Tab.Screen name="Expenses" component={Expenses} />
-                <Tab.Screen name="Reports" component={Reports} />
-                <Tab.Screen name="Add" component={Add} />
-                <Tab.Screen name="Settings" component={Settings} />
-            </Tab.Navigator>
+            <Stack.Navigator initialRouteName="Home">
+                <Stack.Screen
+                    options={{ headerShown: false }}
+                    name="Home"
+                    component={BottomTabNavigator}
+                />
+                <Stack.Screen
+                    name="Categories"
+                    component={Categories}
+                    options={{ title: 'Categories', headerBackTitle: 'Back' }}
+                />
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }

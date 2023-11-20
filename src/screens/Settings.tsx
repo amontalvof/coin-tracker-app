@@ -1,8 +1,10 @@
 import React from 'react';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Alert, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { colors } from '../theme';
-import { ListItem } from '../components';
+import ListItem from '../components/ListItem';
+import RootStackParamList from '../types/rootStackParamList';
 
 // import { ListItem } from '../components/ListItem';
 // import { theme } from '../theme';
@@ -10,7 +12,9 @@ import { ListItem } from '../components';
 
 // const { useRealm } = RealmContext;
 
-const Settings = ({ navigation }) => {
+type Props = NativeStackScreenProps<RootStackParamList, 'Settings'>;
+
+const Settings: React.FC<Props> = ({ navigation }) => {
     // const realm = useRealm();
 
     return (
@@ -32,7 +36,7 @@ const Settings = ({ navigation }) => {
                     />
                 }
                 onClick={() => {
-                    // navigation.navigate('Categories');
+                    navigation.navigate('Categories');
                 }}
             />
             <ListItem
